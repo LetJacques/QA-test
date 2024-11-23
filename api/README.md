@@ -27,20 +27,19 @@ Este repositório contém os testes realizados para validar a API Restful-Booker
 - **Endpoint**: `POST /booking`
 - **Descrição**: Validar se o sistema cria uma nova reserva com os dados enviados.
 - **Dados Enviados**: BODY
-  ````json
+  ```json
   {
     "firstname": "John",
     "lastname": "Marston",
     "totalprice": 111,
     "depositpaid": true,
     "bookingdates": {
-        "checkin": "2018-01-01",
-        "checkout": "2019-01-01"
+      "checkin": "2018-01-01",
+      "checkout": "2019-01-01"
     },
     "additionalneeds": "Breakfast"
   }
-    ```
-  ````
+  ```
 - **Resultado Obtido**: 200 OK. Campos preenchidos conforme os dados enviados, junto com o id da reserva.
 
 #### 2.2 Listar Todas as Reservas
