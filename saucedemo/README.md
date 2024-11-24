@@ -35,7 +35,7 @@ O objetivo deste documento é descrever o plano de testes realizado para a plata
 - **Passos**:
   1. Selecionar um produto e adicionar ao carrinho.
   2. Acessar o carrinho e verificar se o produto está presente.
-  3. Finalizar a compra.
+  3. Realizar as etapas de adiçao de dados e finalizar a compra.
   4. Verificar se o pedido é registrado corretamente.
 - **Resultado Esperado**:
   - O produto é adicionado ao carrinho e a compra é finalizada com sucesso.
@@ -70,14 +70,14 @@ O objetivo deste documento é descrever o plano de testes realizado para a plata
 - **Resultado Esperado**:
   - O usuário é deslogado corretamente e redirecionado para a página de login.
 
-### 2.7 Títulos
+### 2.7 Títulos e descrições
 
-- **Objetivo**: Verificar a correta exibição e formatação dos títulos das páginas do site.
+- **Objetivo**: Validar a exibição, formatação e conteúdo dos títulos e descrições das páginas do site.
 - **Passos**:
-  1. Acessar cada página da aplicação.
-  2. Identificar os títulos principais.
-  3. Validar se os textos dos títulos estão corretos e alinhados com o propósito da página.
-- **Resultado Esperado**: Os títulos devem ser exibidos corretamente, com formatação consistente e conteúdo apropriado.
+  1. Identificar os títulos principais e suas descrições associadas.
+  2. Validar se os textos dos títulos e descrições estão corretos, claros e alinhados ao propósito da página.
+  3. Verificar a consistência da formatação visual, como tamanho, fonte e alinhamento.
+- **Resultado Esperado**: Os títulos e descrições devem estar corretamente exibidos, com formatação uniforme e conteúdo adequado para cada página.
 
 ### 2.8 Logos e Imagens
 
@@ -176,10 +176,10 @@ O objetivo deste documento é descrever o plano de testes realizado para a plata
 
 - **Adição de produto ao carrinho**: Passou. Ao clicar no botão de adicionar, o produto é corretamente enviado para o carrinho, e o número no ícone do carrinho é incrementado, indicando a inclusão do item. No entanto, foi observado que atualmente só é possível adicionar uma unidade de cada produto ao carrinho, sem a opção de aumentar a quantidade de unidades do mesmo item diretamente. Isso pode limitar a experiência do usuário caso ele deseje comprar várias unidades de um mesmo produto.
   **Sugestão de melhoria**: Implementar uma funcionalidade que permita o ajuste da quantidade de unidades de cada produto diretamente no carrinho, com botões ou campos de incremento/decremento.
-- **Finalização da compra**: Falhou. Apesar de o sistema funcionar normalmente ao finalizar uma compra com produtos no carrinho, foi identificado que o sistema permite realizar o checkout mesmo sem nenhum produto no carrinho, seguindo todo o fluxo de compra até a confirmação final.
+- **Finalização da compra**: Falhou. Apesar de o sistema funcionar normalmente ao finalizar uma compra com produtos no carrinho, foi identificado que o sistema permite realizar o checkout mesmo sem nenhum produto no carrinho, seguindo todo o fluxo de compra até a confirmação final. Além disso, Ao clicar no botão de checkout, o usuário é redirecionado para a página "Checkout: Your Information", onde deve preencher seus dados em três campos: primeiro nome (first name), sobrenome (last name) e código postal (zip/postal code), o sistema atualmente permite que os campos "first name" e "last name" sejam preenchidos com qualquer caractere, inclusive números e símbolos, o que não deveria ser o caso. O campo "postal code" também aceita caracteres não numéricos, o que é um erro, já que o código postal deveria aceitar apenas números.
   **Observação**: Durante o checkout com o carrinho vazio, as informações exibidas na descrição de compra incluem: Item total: $0; Tax: $0; Total: $0.00. Esse comportamento gera uma inconsistência, permitindo a confirmação de compras inválidas.
   **Impacto**: Esse comportamento pode gerar confusão para o usuário e permitir pedidos inválidos ou inconsistentes no sistema.
-  **Sugestão de correção**: Adicionar uma validação no fluxo de checkout que impeça a continuidade do processo caso o carrinho esteja vazio, exibindo uma mensagem de erro apropriada como "Adicione produtos ao carrinho antes de continuar".
+  **Sugestão de correção**: Adicionar uma validação no fluxo de checkout que impeça a continuidade do processo caso o carrinho esteja vazio, exibindo uma mensagem de erro apropriada como "Adicione produtos ao carrinho antes de continuar". Implementar validações rigorosas para garantir que "first name" e "last name" aceitem apenas strings de caracteres alfabéticos e que o "postal code" aceite apenas números. Caso algum dos campos não seja preenchido corretamente, o sistema deve exibir uma mensagem de erro clara e impedir a continuidade do checkout até que as correções sejam feitas.
 
 ### 3.4 Resultados de Remoção de Itens do Carrinho
 
@@ -193,7 +193,30 @@ O objetivo deste documento é descrever o plano de testes realizado para a plata
 
 - **Logout bem-sucedido**: Passou. Logout realizado com sucesso em todas as sessões de login.
 
-### 3.7 Títulos
+### 3.7 Títulos e descrições
+
+- **Resultado da Verificação**: Passou. Todos os títulos e descrições foram validados e estão corretos.
+- **Sugestões de Melhoria**: Adicionar informações técnicas, como materiais, tamanhos ou instruções de uso onde aplicável, para facilitar a tomada de decisão dos consumidores.
+
+### 3.8 Logos e Imagens
+
+- **Resultado da Verificação**: Passou. Durante o teste, foi validado que todas as imagens exibidas correspondem corretamente aos produtos descritos em seus respectivos títulos e descrições quando logado com credenciais válidas.
+- **Sugestão de melhoria**: Implementar um logo oficial para a marca no site, fortalecendo a identidade visual. Atualmente, a única representação visual da marca é o ícone da aba do navegador, que não aparece em nenhuma área visível da interface. A inclusão de um logo pode melhorar o reconhecimento da marca e a experiência do usuário.
+
+### 3.9 Header e Footer
+
+- **Resultado da Verificação**: Passou parcialmente. No header, a estrutura é simples e funcional. No footer, todos os ícones redirecionam para os links corretos, indicando que as funcionalidades estão implementadas corretamente. No entanto, ao clicar no link "Privacy Policy" dentro do texto:
+  "© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy", nenhuma ação ocorre, e as políticas de privacidade não são exibidas.
+- **Sugestão de melhoria**: Corrigir o link "Privacy Policy" para que redirecione ao documento ou página apropriada com as políticas de privacidade da marca. Considerar adicionar informações ou links úteis no footer para aprimorar a experiência do usuário, como detalhes de contato ou FAQs.
+
+### 3.10 Menu
+
+- **Resultado da Verificação**: Passou.
+- **Sugestão de melhoria**: Considerar incluir ícones ou descrições adicionais ao lado dos itens para melhorar a experiência do usuário e tornar o menu mais intuitivo.
+
+### 3.11 Ícones
+
+- **Resultado da Verificação**: Passou.
 
 ## 4. Sugestões de Melhoria de UX/UI
 
@@ -242,24 +265,67 @@ O objetivo deste documento é descrever o plano de testes realizado para a plata
 - **Sugestões de Correção**: Adicionar uma validação no fluxo de checkout para impedir a continuidade do processo caso o carrinho esteja vazio. Exibir uma mensagem de erro como "Adicione produtos ao carrinho antes de continuar".
   ![Captura de Tela: Checkout sem produtos](./Image/checkout_bug.png)
 
+### Bug 4: Validação de Campos no Checkout (First Name, Last Name e Postal Code)
+
+- **Descrição**: O sistema permite que os campos "First Name" e "Last Name" aceitem números e símbolos, e o campo "Postal Code" aceita caracteres não numéricos.
+- **Passos para Reproduzir**:
+
+1. Acesse a página de "Checkout: Your Information".
+2. No campo "First Name", insira um valor como "John123" ou "John$#".
+3. No campo "Last Name", insira um valor como "Doe456" ou "Doe@!".
+4. No campo "Postal Code", insira um valor como "123AB" ou "ABCDE".
+5. Clique em "Continue" para prosseguir.
+
+- **Resultado Esperado**: O sistema deve aceitar apenas caracteres alfabéticos nos campos "First Name" e "Last Name" e apenas números no campo "Postal Code".
+- **Resultado Obtido**: O sistema permite a inserção de caracteres não permitidos nos campos de nome e código postal, permitindo a continuidade do checkout.
+- **Sugestões de Correção**: Implementar validações rigorosas para os campos:
+  **First Name e Last Name**: Aceitar apenas letras e espaços (regex: /^[A-Za-z\s]+$/).
+  **Postal Code**: Aceitar apenas números, com o formato esperado "xxxxx" ou "xxxxx-xxx". Exibir mensagens de erro apropriadas quando os campos forem preenchidos incorretamente.
+- **Sugestão Adicional**: Considerar a adição de uma máscara de entrada para o campo Postal Code, para garantir que os usuários insiram o código postal no formato correto, como "xxxxx" ou "xxxxx-xxx". Isso pode melhorar a experiência do usuário e evitar erros de formatação.
+  ![Captura de Tela: Checkout com dados inválidos](./Image/checkout_bug_2.png)
+
+### Bug 5: Problema de Responsividade em Smartphone
+
+- **Descrição**: A aplicação apresenta problemas de layout em dispositivos com resolução de 375x667 e 375x812. As imagens ficam ligeiramente distorcidas e o valor do produto fica com um espaçamento excessivo em relação ao produto.
+- **Passos para Reproduzir**:
+
+1. Acesse a página principal da aplicação.
+2. Ajuste a resolução para Smartphone (375x667, 375x812).
+3. Observe o layout da página, especialmente nas áreas de imagem e preço.
+
+- **Resultado Esperado**: As imagens devem se ajustar corretamente à tela e o valor do produto deve estar posicionado adequadamente em relação ao produto, sem espaçamento excessivo.
+- **Resultado Obtido**: As imagens apresentam distorção e o valor do produto fica com um grande espaçamento do produto, comprometendo a experiência do usuário.
+- **Sugestões de Correção**: Ajustar as proporções das imagens para que se ajustem corretamente em diferentes tamanhos de tela. Verificar o comportamento do layout e ajustar o espaçamento entre os elementos, garantindo que o valor do produto fique corretamente alinhado ao produto.
+  ![Captura de Tela: Responsividade em smartphone](./Image/mobile_375x812.png)
+
 ## 6. Análise de Riscos
 
-- **Risco 1**: A falta de visibilidade de botões importantes em dispositivos móveis pode prejudicar a experiência do usuário e causar abandono de carrinho.
-- **Risco 2**: Problemas de usabilidade no fluxo de checkout podem impactar as conversões, gerando um risco financeiro significativo.
+- **Risco de Usabilidade**: Alguns fluxos de navegação podem ser confusos ou difíceis de usar, como a interface do login, que apresenta falhas de UX/UI (como a altura fixa do container de erro). Isso pode impactar a experiência do usuário, principalmente em dispositivos móveis.
+- **Risco de Funcionalidade**: A possibilidade de um usuário completar o checkout mesmo sem ter adicionado produtos ao carrinho é um risco grave, pois pode gerar pedidos inválidos e inconsistentes.
+- **Risco de Performance**: A lentidão observada em alguns fluxos, como o login e a navegação, pode impactar a experiência do usuário, principalmente em conexões mais lentas ou dispositivos menos potentes.
+- **Risco de Validação de Campos**: A falta de validação rigorosa nos campos de "first name", "last name" e "postal code" durante o checkout pode permitir entradas incorretas, resultando em erros de processamento ou falhas no sistema.
 
-## 7. Testes Extras (Diferenciais)
+### 6.1 Estratégias de Mitigação
+
+- Melhoria da UX/UI: Ajustar a altura do container de erro para garantir que as mensagens sejam visíveis corretamente. Melhorar os fluxos de navegação com foco em usabilidade.
+
+- Revisão do Fluxo de Checkout: Implementar validações que restrinjam a finalização da compra quando o carrinho estiver vazio. Assegurar que os campos de dados pessoais sejam preenchidos corretamente antes de permitir a continuidade.
+
+- Validação de Campos: Garantir que todos os campos no fluxo de checkout (e outras entradas de dados) sejam validados corretamente, aceitando apenas valores válidos e fornecendo mensagens de erro claras e concisas.
+
+## 7. Testes Extras
 
 ### 7.1 Testes de Responsividade
 
-- Testar a plataforma em diferentes tamanhos de tela (desktop, tablet, mobile).
-- Verificar se todos os elementos se ajustam corretamente sem comprometer a usabilidade.
+# Testes de Layout e Design:
 
-### 7.2 Testes de Acessibilidade
+Verificar se a aplicação mantém sua estrutura visual e funcionalidade em diferentes tamanhos de tela. Testar os fluxos principais (login, compra, checkout) em resoluções de dispositivos Desktop, Tablet e Smartphone.
 
-- Testar com leitores de tela.
-- Verificar se os elementos possuem contraste adequado e são legíveis para usuários com deficiências visuais.
+**Desktop (1366x768, 1920x1080)**: Passou.
+**Tablet (768x1024, 800x1280)**: Passou.
+**Smartphone (375x667, 375x812)**: Falhou. As imagens apresentam leve distorção e o valor do produto fica com um espaçamento muito grande em relação ao produto.
 
-### 7.3 Sugestões de Automação
+### 7.2 Sugestões de Automação
 
 - Automatizar o fluxo de login, compra e remoção de itens do carrinho.
 - Implementar testes automatizados para validação de navegação entre páginas e ordenação de produtos.
