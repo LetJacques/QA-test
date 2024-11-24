@@ -115,6 +115,8 @@ O objetivo deste documento é descrever o plano de testes realizado para a plata
   3. Testar as ações associadas aos ícones.
 - **Resultado Esperado**: Todos os ícones devem ser exibidos corretamente e funcionar conforme esperado.
 
+
+
 ## 3. Resultados dos Testes Executados
 
 ### 3.1 Resultados de Login
