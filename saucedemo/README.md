@@ -115,8 +115,6 @@ O objetivo deste documento é descrever o plano de testes realizado para a plata
   3. Testar as ações associadas aos ícones.
 - **Resultado Esperado**: Todos os ícones devem ser exibidos corretamente e funcionar conforme esperado.
 
-
-
 ## 3. Resultados dos Testes Executados
 
 ### 3.1 Resultados de Login
@@ -321,11 +319,11 @@ O objetivo deste documento é descrever o plano de testes realizado para a plata
 
 # Testes de Layout e Design:
 
-Verificar se a aplicação mantém sua estrutura visual e funcionalidade em diferentes tamanhos de tela. Testar os fluxos principais (login, compra, checkout) em resoluções de dispositivos Desktop, Tablet e Smartphone.
+Verificação se a aplicação mantém sua estrutura visual e funcionalidade em diferentes tamanhos de tela. Testar os fluxos principais (login, compra, checkout) em resoluções de dispositivos Desktop, Tablet e Smartphone.
 
-**Desktop (1366x768, 1920x1080)**: Passou.
-**Tablet (768x1024, 800x1280)**: Passou.
-**Smartphone (375x667, 375x812)**: Falhou. As imagens apresentam leve distorção e o valor do produto fica com um espaçamento muito grande em relação ao produto.
+- **Desktop (1366x768, 1920x1080)**: Passou.
+- **Tablet (768x1024, 800x1280)**: Passou.
+- **Smartphone (375x667, 375x812)**: Falhou. As imagens apresentam leve distorção e o valor do produto fica com um espaçamento muito grande em relação ao produto.
 
 ### 7.2 Sugestões de Automação
 
