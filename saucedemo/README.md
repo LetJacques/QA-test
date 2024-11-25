@@ -325,7 +325,30 @@ Verificação se a aplicação mantém sua estrutura visual e funcionalidade em 
 - **Tablet (768x1024, 800x1280)**: Passou.
 - **Smartphone (375x667, 375x812)**: Falhou. As imagens apresentam leve distorção e o valor do produto fica com um espaçamento muito grande em relação ao produto.
 
-### 7.2 Sugestões de Automação
+### 7.2 Testes de Acessibilidade
+
+Para garantir que a aplicação esteja acessível para usuários com deficiências, foi utilizado o **Axe** para realizar uma auditoria de acessibilidade. A ferramenta Axe foi configurada como uma extensão no navegador e executada na aplicação durante os testes manuais.
+
+### Relatórios Gerados
+
+A ferramenta Axe gerou relatórios em formato JSON, que documentam todos os problemas encontrados durante a auditoria de acessibilidade. Não foram encontrados problemas críticos ou de alta prioridade durante a análise.
+
+- **Relatório 1**: [axe-report-cart.json](./relatorios/axe-report-cart.json)
+- **Relatório 2**: [axe-report-checkoutComplete.json](./relatorios/axe-report-checkoutComplete.json)
+- **Relatório 3**: [axe-report-checkoutInformation.json](./relatorios/axe-report-checkoutInformation.json)
+- **Relatório 4**: [axe-report-checkoutOverview.json](./relatorios/axe-report-checkoutOverview.json)
+- **Relatório 5**: [axe-report-inventory.json](./relatorios/axe-report-inventory.json)
+- **Relatório 6**: [axe-report-login.json](./relatorios/axe-report-login.json)
+
+### Resumo dos Resultados
+
+Durante os testes com o Axe, não foram encontrados problemas de acessibilidade de alto impacto. A aplicação atende aos critérios essenciais de acessibilidade para o público geral.
+
+### Conclusões
+
+A auditoria com Axe não gerou alertas críticos e os problemas de acessibilidade encontrados são de baixa prioridade. A plataforma está acessível para usuários com deficiências visuais e de mobilidade, e não foram encontradas falhas significativas nas áreas de navegação, contrastes de cores, ou uso de leitores de tela.
+
+### 7.3 Sugestões de Automação
 
 - Automatizar o fluxo de login, compra e remoção de itens do carrinho.
 - Implementar testes automatizados para validação de navegação entre páginas e ordenação de produtos.
