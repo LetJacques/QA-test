@@ -81,6 +81,7 @@ Além dos cenários principais, foram realizados testes de **acessibilidade** ut
 Os relatórios dos testes realizados estão disponíveis nos seguintes arquivos:
 
 `ui-testing.md`: Contém o plano de testes, resultados e sugestões para UI Testing.
+
 `api-testing.md`: Contém os testes realizados na API, resultados e bugs encontrados.
 
 Os relatórios de acessibilidade gerados pela ferramenta Axe estão incluídos como arquivos JSON no diretório `relatorios/`.
